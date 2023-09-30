@@ -25,7 +25,7 @@
             <div id="navbar-container" class="boxed">
                 <div class="navbar-header">
                     <a href="index.html" class="navbar-brand">
-                        <img src="assets/img/LOGOCORTADO.png" alt="Smartd Logo" class="brand-icon">
+                        <img src="{{ asset('assets/img/LOGOCORTADO.png') }}" alt="Smartd Logo" class="brand-icon">
                         <div class="brand-title">
                             <span class="brand-text">Smartd</span>
                         </div>
@@ -39,20 +39,23 @@
             <div id="content-container">
                 <div id="page-head">                    
 					<div class="pad-all text-center">
-						<h3>Bienvenido.</h3>
+						<h3>Publicidad Inteligente</h3>
 					</div>
                 </div>                
                 
                 <div id="page-content">
 
-					@include('includes.home')
-
-					    
+                    <div class="container-fluid">
+                        @yield('content')	       
+                     </div><!--.container-fluid-->
                 </div>              
 
             </div>
          
-			@include('includes.menu')	           
+			@include('includes.menu')
+            
+          
+            
 
         </div>
       

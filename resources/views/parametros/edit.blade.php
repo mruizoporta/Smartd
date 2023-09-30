@@ -1,19 +1,17 @@
 @extends('layouts.panel')
 
 @section('content')
-<div class="card shadow">
-    <div class="card-header ">
-      <div class="row align-items-center">
-        <div class="col">
-          <h5 class="mb-0">
-            <span class="glyphicon glyphicon-book"></span> Editar parametros</h5>          
-        </div>
-        
-        </div>
+<div class="row">
+  <div class="col-xs-12">
+
+    <div class="panel">
+      <div class="panel-heading">
+        <h5 class="panel-title"> <span class="glyphicon glyphicon-home"></span> Editar parametros</h5>
       </div>
-    </div>
+   
     
-    <div class="card-body">
+      <div class="panel-body">
+        
       @if($errors->any())
       @foreach($errors->all() as $error)
       <div class="alert alert-danger" role="alert">
@@ -23,7 +21,7 @@
       @endforeach
       @endif
       
-		<div class="box-typical box-typical-padding">
+     <div class="box-typical box-typical-padding">
       <form action="{{url('/parametros/'.$parametro->id)}}" method="POST">    
           @csrf
           @method('PUT')
@@ -45,7 +43,8 @@
         </div>
     </div>
   </div>
-
+  </div>
+</div>
 
 
 @endsection

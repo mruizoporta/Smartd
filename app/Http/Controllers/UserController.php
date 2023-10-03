@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\LoginFormRequest;
 use App\Models\Rol;
+use App\Models\Sucursal;
+use App\Models\sucursalusuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function __construct()
@@ -20,14 +23,22 @@ class UserController extends Controller
         $roles = Rol::all()
         ->where('activo',true);  
 
-        return view('usuarios.create', compact('roles'));
+        $sucursales = Sucursal::all()
+        ->where('activo',true);   ;
+
+        return view('usuarios.create', compact('roles','sucursales'));
     }
 
   public function edit(User $usuario){  
         $roles = Rol::all()
         ->where('activo',true);  
 
-        return view('usuarios.edit', compact('usuario','roles'));
+        $sucursales = Sucursal::all()
+        ->where('activo',true);   ;
+
+        $sucursalusuarios = sucursalusuario::with('Sucursal')->get();
+
+        return view('usuarios.edit', compact('usuario','roles','sucursales','sucursalusuarios'));
     }
 
     public function index()
@@ -77,19 +88,40 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $usuario)
     {
-        $user->nombre = $request->nombre;
-        $user->email = $request->email;
-        $user->username = $request->username;
-     
-        if(isset($request->password)){
-            if(!empty($request->password)){
-                $user->password = Hash::make($request->password);
+    try
+    {
+    
+        DB::beginTransaction();
 
-            }
-        }
-        $user->save();
+        $usuario->nombre = $request->nombre;
+        $usuario->email = $request->email;
+        $usuario->username = $request->email;
+        $usuario->rol_id = $request->rol_id;   
+        $usuario->save();
+
+        //Eliminamos las sucursales  
+        DB::table('sucursalusuarios')->where('user_id', '=', $usuario->id)->delete();
+                
+        //Insertamos las sucursales nuevas
+        $sucursal_id=$request->get('sucursal_id');                
+        $cont=0;
+
+        while ($cont < count($sucursal_id)){
+           $detalle = new sucursalusuario();
+           $detalle-> user_id=$usuario->id;
+           $detalle-> sucursal_id=$sucursal_id[$cont];                    
+           $detalle-> save();
+           $cont = $cont +1;
+        }  
+        DB::commit();  
+        
+    }  
+    catch(Exception $e){
+        DB::rollback();
+    } 
+
         $notification='El usuario ha sido actualizado correctamente.';
         return redirect('/usuarios')->with(compact('notification')); 
     }

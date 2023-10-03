@@ -22,13 +22,13 @@ $(document).on('nifty.ready', function() {
 
     $.plot("#demo-bar-chart", [
         {
-            label: "Students",
+            label: "2021",
             data: d1
         },{
-            label: "Parents",
+            label: "2022",
             data: d2
         },{
-            label: "Teachers",
+            label: "2023",
             data: d3
         }],{
         series: {

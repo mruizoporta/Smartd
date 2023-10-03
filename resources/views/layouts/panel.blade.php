@@ -8,18 +8,27 @@
 
     <title>Smartd</title>
 
-	<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' type='text/css'>
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" >
-    <link rel="stylesheet" href="{{ asset('assets/css/nifty.min.css')}}" >
-    <link rel="stylesheet" href="{{ asset('assets/css/demo/nifty-demo-icons.min.css')}}" >
-    <link rel="stylesheet" href="{{ asset('assets/plugins/pace/pace.min.css')}}" >  
-    <link rel="stylesheet" href="{{ asset('assets/css/demo/nifty-demo.min.css')}}" >
-    <script src="{{ asset('assets/plugins/pace/pace.min.js')}}"></script>           
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/nifty.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/demo/nifty-demo-icons.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/pace/pace.min.css')}}" rel="stylesheet">
+    <script src="{{ asset('assets/plugins/pace/pace.min.js')}}"></script>   
+    {{-- <link href="{{ asset('assets/css/demo/nifty-demo.min.css')}}" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/plugins/switchery/switchery.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/chosen/chosen.min.css')}}" rel="stylesheet">
+    
+    {{-- <link href="{{ asset('assets/plugins/noUiSlider/nouislider.min.css')}}" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet">
 </head>
 
 
 <body>
-    <div id="container" class="effect aside-float aside-bright mainnav-lg">        
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">       
        
         <header id="navbar">
             <div id="navbar-container" class="boxed">
@@ -53,9 +62,6 @@
             </div>
          
 			@include('includes.menu')
-            
-          
-            
 
         </div>
       
@@ -63,26 +69,28 @@
            
             <p class="pad-lft">&#0169; 2023 Smartd</p>
 
-        </footer>       
-    
-       
+        </footer>  
     </div>
   
+   
 
 
     <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('assets/js/nifty.min.js')}}"></script>
-{{--     
-    <script src="{{ asset('js\demo\nifty-demo.min.js')}}"></script>
-    <script src="{{ asset('plugins\flot-charts\jquery.flot.min.js')}}"></script>
-	<script src="{{ asset('plugins\flot-charts\jquery.flot.resize.min.js')}}"></script>
-	<script src="{{ asset('plugins\flot-charts\jquery.flot.tooltip.min.js')}}"></script>
-    <script src="{{ asset('plugins\sparkline\jquery.sparkline.min.js')}}"></script>
-    --}}
-
-
-    
+    <script src="{{ asset('assets/js/demo/nifty-demo.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/switchery/switchery.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/chosen/chosen.jquery.min.js')}}"></script>
+ 
+    <script src="{{ asset('assets/plugins/select2/js/select2.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+    {{-- <script src="{{ asset('assets/js/demo/form-component.js')}}"></script> --}}
+	
+    @stack('scripts')
+ 
 
 </body>
 </html>

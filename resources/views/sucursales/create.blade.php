@@ -68,6 +68,16 @@
                 </select>
               </div>
 
+              <div class="form-group">                
+                <label class="form-label" for="nombrealmacen">Almacen</label>                
+                <select class="form-control" name="alamacen_id">
+                  <option value=""> --Seleccione el almacen--</option>
+                  @foreach ($almacenes as $almacen)
+                  <option value="{{ $almacen -> id }}"> {{$almacen -> nombre}} </option>
+                  @endforeach  
+                </select>
+              </div>
+
               <fieldset class="form-group">
                 <label class="form-label" for="lblruc">Número RUC</label>             
                 <input type="text" name="ruc" class="form-control" value="{{old('ruc')}}" require> </input>

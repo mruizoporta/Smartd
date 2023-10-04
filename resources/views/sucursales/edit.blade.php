@@ -70,7 +70,7 @@
         </fieldset>
 
         <fieldset class="form-group">                
-          <label class="form-label" for="nombreciudad">Pais</label>
+          <label class="form-label" for="nombreciudad">Ciudad</label>
           <select class="form-control" name="ciudad_id">
             <option value=""> --Seleccione la ciudad--</option>
             @foreach ($ciudades as $ciudad)
@@ -79,6 +79,20 @@
                       selected
                 @endif
               > {{$ciudad -> nombre}} </option>
+            @endforeach  
+          </select>
+        </fieldset>
+
+        <fieldset class="form-group">                
+          <label class="form-label" for="nombrealmacen">Almacen</label>
+          <select class="form-control" name="almacen">
+            <option value=""> --Seleccione el almacen--</option>
+            @foreach ($almacenes as $almacen)
+            <option value="{{ $almacen -> id }}"
+              @if ($almacen->id === $sucursal->almacen_id)
+                      selected
+                @endif
+              > {{$almacen -> nombre}} </option>
             @endforeach  
           </select>
         </fieldset>

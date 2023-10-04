@@ -20,4 +20,8 @@ class Sucursal extends Model
     public function Ciudad(){
         return $this->belongsTo(Ciudad::class);
     }
+
+    public function Almacen(){
+        return $this->belongsTo(Almacen::class);
+    }
 }

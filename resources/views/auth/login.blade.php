@@ -5,12 +5,12 @@
 <div class="cls-content">
     <div class="cls-content-sm panel">
         <div class="card-header">
-            <img  style="  height: 50px; width: 190px;" src="{{ asset('assets/img/LOGO.png') }}" alt="">
+            <img  class="img-responsive" src="{{ asset('assets/img/logo-white.png') }}" alt="">
         </div>
-        <div class="panel-body">
+        <div class="panel-body text-center">
             <div class="mar-ver pad-btm">
-                <h1 class="h3">Bienvenido!</h1>
-                <p>Iniciar sesión</p>
+                <h2 class="h2">Iniciar sesión</h4>
+                <hr>
             </div>
             <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -35,7 +35,7 @@
                     @enderror
                 </div>
                
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Ingresar</button>
+                <button class="btn btn-login-sd btn-lg btn-block text-uppercase" type="submit">Ingresar</button>
             </form>
         </div>
 

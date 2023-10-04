@@ -105,6 +105,7 @@ class UserController extends Controller
         DB::table('sucursalusuarios')->where('user_id', '=', $usuario->id)->delete();
                 
         //Insertamos las sucursales nuevas
+        return $request;
         $sucursal_id=$request->get('sucursal_id');                
         $cont=0;
 

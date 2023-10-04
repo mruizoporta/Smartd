@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\valorcatalogo;
+use App\Models\ValorCatalogo;
 use Illuminate\Http\Request;
 
-class ValorcatalogoController extends Controller
+class ValorCatalogoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class ValorcatalogoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(valorcatalogo $valorcatalogo)
+    public function show(ValorCatalogo $valorCatalogo)
     {
         //
     }
@@ -34,7 +34,7 @@ class ValorcatalogoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, valorcatalogo $valorcatalogo)
+    public function update(Request $request, ValorCatalogo $valorCatalogo)
     {
         //
     }
@@ -42,7 +42,7 @@ class ValorcatalogoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(valorcatalogo $valorcatalogo)
+    public function destroy(ValorCatalogo $valorCatalogo)
     {
         //
     }

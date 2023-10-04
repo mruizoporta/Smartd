@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Almacen;
 use App\Models\Ciudad;
 use App\Models\Empresa;
 use App\Models\Pais;
@@ -20,8 +21,10 @@ class SucursalController extends Controller
         $paises = Pais::all();
         $ciudades = Ciudad::all();
         $empresas = Empresa::all()
+        ->where('activo',true); 
+        $almacenes = Almacen::all()
         ->where('activo',true); ;
-        return view('sucursales.create', compact('paises','ciudades','empresas'));
+        return view('sucursales.create', compact('paises','ciudades','empresas','almacenes'));
     }
 
   public function edit(Sucursal $sucursal){  
@@ -29,7 +32,9 @@ class SucursalController extends Controller
         $ciudades = Ciudad::all();
         $empresas = Empresa::all()
         ->where('activo',true); ;
-        return view('sucursales.edit', compact('sucursal','empresas','paises','ciudades'));
+        $almacenes = Almacen::all()
+        ->where('activo',true); ;
+        return view('sucursales.edit', compact('sucursal','empresas','paises','ciudades','almacenes'));
     }
 
     /**
@@ -65,6 +70,7 @@ class SucursalController extends Controller
         $sucursal->logo=$request->logo; 
         $sucursal->pais_id=$request->pais_id; 
         $sucursal->ciudad_id=$request->ciudad_id; 
+        $sucursal->almacen_id=$request->almacen_id; 
         $sucursal->save();
        
         $notification='La sucursal ha sido creada correctamente.';
@@ -102,6 +108,7 @@ class SucursalController extends Controller
         $sucursal->logo=$request->logo; 
         $sucursal->pais_id=$request->pais_id; 
         $sucursal->ciudad_id=$request->ciudad_id; 
+        $sucursal->almacen_id=$request->almacen_id;
         $sucursal->save();
         $notification='La sucursal ha sido actualizada correctamente.';      
         return redirect('/sucursales')->with(compact('notification'));

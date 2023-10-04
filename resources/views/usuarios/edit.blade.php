@@ -191,7 +191,7 @@
   }    
   
   function eliminar(id) {
-    console.log(id);
+ 
     $("#tr-" + id).remove();
    
   }    

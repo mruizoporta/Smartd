@@ -139,6 +139,14 @@ Route::post('/entradas', [App\Http\Controllers\EntradaController::class, 'store'
 Route::put('/entradas/{entrada}', [App\Http\Controllers\EntradaController::class, 'update']);
 Route::post('/entradas/{entrada}/inactivar', [App\Http\Controllers\EntradaController::class, 'destroy']);
 
+//Rutas catalogos
+Route::get('/catalogos', [App\Http\Controllers\CatalogosController::class, 'index']);
+Route::get('/catalogos/create', [App\Http\Controllers\CatalogosController::class, 'create']);
+Route::get('/catalogos/{catalogo}/edit', [App\Http\Controllers\CatalogosController::class, 'edit']);
+Route::post('/catalogos', [App\Http\Controllers\CatalogosController::class, 'store']);
+Route::put('/catalogos/{catalogo}', [App\Http\Controllers\CatalogosController::class, 'update']);
+Route::post('/catalogos/{catalogo}/inactivar', [App\Http\Controllers\CatalogosController::class, 'destroy']);
+
 
 
 

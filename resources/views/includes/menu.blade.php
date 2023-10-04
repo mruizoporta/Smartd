@@ -107,6 +107,7 @@
 									<li><a href="{{ url('/empresas') }}">Empresas</a></li>
 									<li><a href="{{ url('/parametros/1/edit') }}">Parametros</a></li>
 									<li><a href="{{ url('/sucursales') }}">Sucursales</a></li>
+									<li><a href="{{ url('/catalogos') }}">Catálogos</a></li>
 								</ul>
 							</li>
 				

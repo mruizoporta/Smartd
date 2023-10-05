@@ -18,7 +18,7 @@
                     </div>
                    
                 </div>
-                <button class="btn btn-pink mar-ver">Ir a clientes</button>             
+                <button class="btn btn-blue mar-ver">Ir a clientes</button>             
             </div>
             <div class="col-md-7">
                 <div id="demo-bar-chart" style="height:250px"></div>
@@ -40,7 +40,7 @@
 
                 <!--Tile-->
                 <!--===================================================-->
-                <div class="panel panel-primary panel-colorful">
+                <div class="panel panel-success panel-colorful">
                     <div class="pad-all text-center">
                         <span class="text-3x text-thin">C$52,000</span>
                         <p>Facturado</p>
@@ -52,7 +52,7 @@
 
                 <!--Tile-->
                 <!--===================================================-->
-                <div class="panel panel-warning panel-colorful">
+                <div class="panel panel-earrings panel-colorful">
                     <div class="pad-all text-center">
                         <span class="text-3x text-thin">C$ 68,000</span>
                         <p>Cuentas por Cobrar</p>
@@ -66,10 +66,10 @@
 
                 <!--Tile-->
                 <!--===================================================-->
-                <div class="panel panel-purple panel-colorful">
+                <div class="panel panel-complete panel-colorful">
                     <div class="pad-all text-center">
                         <span class="text-3x text-thin">32</span>
-                        <p>Oordenes completadas</p>
+                        <p>Ordenes completadas</p>
                         <i class="demo-pli-coding"></i>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
 
                 <!--Tile-->
                 <!--===================================================-->
-                <div class="panel panel-dark panel-colorful">
+                <div class="panel panel-process panel-colorful">
                     <div class="pad-all text-center">
                         <span class="text-3x text-thin">12</span>
                         <p>Ordenes en proceso</p>

@@ -11,13 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('valor_catalogos', function (Blueprint $table) {
+        Schema::create('ordentrabajotareas', function (Blueprint $table) {
             $table->id();
 
-            $table->string('codigo')->nullable();
+            $table->string('tarea')->nullable();
             $table->string('descripcion')->nullable();
+            $table->integer('orden')->nullable();
+            $table->string('comentario')->nullable();
             $table->boolean('activo')->default(true);
-            $table->foreignId('catalogo_id')->nullable()->constrained('catalogos');
+            $table->decimal('tiempo', 8, 2)->nullable();
+            $table->foreignId('estado_id')->nullable()->constrained('valor_catalogos');
+            $table->foreignId('orden_id')->nullable()->constrained('ordentrabajos');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('valorcatalogos');
+        Schema::dropIfExists('ordentrabajotareas');
     }
 };

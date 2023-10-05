@@ -16,7 +16,7 @@
                   <div class="row">
                       <div class="col-sm-12 table-toolbar-right">
                         <a href="{{url('/empresas')}}"class="btn btn-primary " >
-                          <i class="demo-pli-add icon-fw"></i>Regresar
+                          <i class="demo-pli-arrow-left icon-fw"></i>Regresar
                         </a>
                       </div>
                       

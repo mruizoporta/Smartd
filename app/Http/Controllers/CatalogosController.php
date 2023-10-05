@@ -83,7 +83,7 @@ class CatalogosController extends Controller
             $ids=$request->get('ids');
             $codigos=$request->get('codigo');
             $nombresvalores=$request->get('nombresvalores');
-            return $codigos;
+           
             $cont=0;
 
             while ($cont < count($codigos)){

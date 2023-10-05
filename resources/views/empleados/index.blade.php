@@ -5,14 +5,14 @@
   <div class="col-xs-12">
     <div class="panel"> 
         <div class="panel-heading">
-            <h5 class="panel-title"> <span class="glyphicon glyphicon-lock"></span> Proveedores</h5>
+            <h5 class="panel-title"> <span class="glyphicon glyphicon-lock"></span> Empleados</h5>
         </div>
         <div class="panel-body">
                     <div class="pad-btm form-inline">
                       <div class="row">
                           <div class="col-sm-6 table-toolbar-left">
-                            <a href="{{url('/proveedores/create')}}"class="btn btn-primary " >
-                              <i class="demo-pli-add icon-fw"></i>Nuevo proveedor
+                            <a href="{{url('/empleados/create')}}"class="btn btn-primary " >
+                              <i class="demo-pli-add icon-fw"></i>Nuevo empleado
                             </a>
                           </div>                
                       </div>
@@ -27,32 +27,34 @@
 
                     <div class="table-responsive">
                       <div class="bootstrap-table">                        
-                        <table id="table-proveedores" class="table table-bordered table-hover" >
+                        <table id="table-empleados" class="table table-bordered table-hover" >
                             <thead>
                               <tr>
                                   <th width="1">
                                       #
                                   </th>                                               
-                                  <th>RUC</th>  
-                                  <th>Razon Social</th>    
+                                  <th>Identificacion</th>  
+                                  <th>Nombre completo</th>    
                                   <th>Correo electrónico</th>                            
-                                  <th>Telefono</th>                      
+                                  <th>Telefono</th>  
+                                  <th>Cargo</th>                      
                                   <th></th>
                               </tr>
                             </thead>
                             <tbody>
-                                @foreach($proveedores as $proveedor)
+                                @foreach($empleados as $empleado)
 
                                 <tr>
-                                    <td> {{$proveedor-> id}} </td>                  
-                                    <td> {{$proveedor-> Persona->identificacion}} </td>              
-                                    <td> {{$proveedor-> Persona->razonsocial}} </td>                                   
-                                    <td> {{$proveedor-> Persona->correo}} </td> 
-                                    <td> {{$proveedor-> Persona->telefono}} </td>                           
+                                    <td> {{$empleado-> id}} </td>                  
+                                    <td> {{$empleado-> Persona->identificacion}} </td>              
+                                    <td> {{$empleado-> Persona->nombres}} + ' ' + {{$empleado-> Persona->apellidos}} </td>                                   
+                                    <td> {{$empleado-> Persona->correo}} </td> 
+                                    <td> {{$cliente-> Persona->telefono}} </td>  
+                                    <td> {{$cliente-> Cargo->descripcion}} </td>                           
                                     <td>
-                                        <form action="{{url('/proveedores/'.$proveedor->id.'/inactivar')}}" method="POST">
+                                        <form action="{{url('/empleados/'.$empleado->id.'/inactivar')}}" method="POST">
                                           @csrf    
-                                          <a href="{{url('/proveedores/'.$proveedor->id.'/edit')}}" class="tabledit-edit-button btn btn-sm btn-default">
+                                          <a href="{{url('/empleados/'.$empleado->id.'/edit')}}" class="tabledit-edit-button btn btn-sm btn-default">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                           </a>
                                         

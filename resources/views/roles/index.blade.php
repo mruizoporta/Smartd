@@ -50,7 +50,7 @@
                                         <span class="glyphicon glyphicon-pencil"></span>
                                       </a>
                                      
-                                      <button type="submit" class="tabledit-edit-button btn btn-sm btn-default">
+                                      <button type="submit" class="tabledit-edit-button btn btn-sm btn-danger">
                                         <span class="glyphicon glyphicon-trash"></span>
                                       </button>
 

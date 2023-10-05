@@ -1,23 +1,25 @@
 @extends('layouts.panel')
 
 @section('content')
-<div class="card shadow">
-    <div class="card-header ">
-      <div class="row align-items-center">
-        <div class="col">
-          <h5 class="mb-0">
-            <span class="glyphicon glyphicon-book"></span> Nuevo catalogo</h5>          
-        </div>
-        <div class="col text-right">
-          <a href="{{url('/catalogos')}}" class="btn btn-sm btn-default">Regresar
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-       
-        </div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel">
+      <div class="panel-heading">
+        <h5 class="panel-title"> <span class="glyphicon glyphicon-home"></span> Editar catalogo</h5>
       </div>
-    </div>
     
-    <div class="card-body">
+      <div class="panel-body">
+        <div class="pad-btm form-inline">
+          <div class="row">
+              <div class="col-sm-12 table-toolbar-right">
+                <a href="{{url('/catalogos')}}"class="btn btn-primary " > 
+                  <span class="demo-pli-arrow-left icon-fw"></span>
+                  Regresar
+                </a>
+              </div>            
+          </div>
+        </div>
+
       @if($errors->any())
       @foreach($errors->all() as $error)
       <div class="alert alert-danger" role="alert">
@@ -147,10 +149,11 @@
         </div>
     </div>
   </div>
-
+  </div>
+</div>
   
 
-  @push('scrips')
+  @push('scripts')
 
   <script>
 

@@ -9,9 +9,10 @@
             <span class="glyphicon glyphicon-lock"></span> Edicar rol</h5>
         </div>
         <div class="col text-right">
-          <a href="{{url('/cargos')}}" class="btn btn-sm btn-default">Regresar
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
+          <a href="{{url('/cargos')}}" class="btn btn-sm btn-default">
+            <span class="demo-pli-arrow-left icon-fw"></span>
+            Regresar
+          </a>
        
         </div>
       </div>

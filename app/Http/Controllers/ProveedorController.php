@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Persona;
 use App\Models\Proveedor;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -50,11 +51,17 @@ class ProveedorController extends Controller
         $persona->razonsocial=$request->razonsocial; 
         $persona->telefono=$request->telefono; 
         $persona->correo=$request->correo;    
+    
         $persona->save();
 
         $proveedor = new Proveedor();
         $proveedor->empresa_id=1; 
-        $proveedor->persona_id=$persona->id;        
+        $proveedor->persona_id=$persona->id;     
+        $proveedor->nombrecontacto=$request->nombrecontacto; 
+        $proveedor->correocontacto=$request->correocontacto;    
+        $proveedor->telefonocontacto=$request->telefonocontacto; 
+        
+
         $proveedor->save();
 
         DB::commit();   
@@ -95,8 +102,13 @@ class ProveedorController extends Controller
         $persona->esjuridico=true; 
         $persona->razonsocial=$request->razonsocial; 
         $persona->telefono=$request->telefono; 
-        $persona->correo=$request->correo;  
+        $persona->correo=$request->correo;         
         $persona->save();
+        
+        $proveedor->nombrecontacto=$request->nombrecontacto; 
+        $proveedor->correocontacto=$request->correocontacto;    
+        $proveedor->telefonocontacto=$request->telefonocontacto; 
+        $proveedor->save();
         $notification='El proveedor ha sido actualizado correctamente.';
         return redirect('/proveedores')->with(compact('notification')); 
     }

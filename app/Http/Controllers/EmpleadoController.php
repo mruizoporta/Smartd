@@ -14,7 +14,10 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        return Empleado::where('activo',1)->get();
+        $empleados= Empleado::with('Persona','Cargo')->get()
+        ->where('activo',true); 
+
+        return view('empleados.index', compact('empleados'));
     }
 
     /**

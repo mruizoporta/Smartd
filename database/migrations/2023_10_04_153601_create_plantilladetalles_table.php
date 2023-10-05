@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('valor_catalogos', function (Blueprint $table) {
+        Schema::create('plantilladetalles', function (Blueprint $table) {
             $table->id();
 
-            $table->string('codigo')->nullable();
+            $table->string('tarea')->nullable();
             $table->string('descripcion')->nullable();
             $table->boolean('activo')->default(true);
-            $table->foreignId('catalogo_id')->nullable()->constrained('catalogos');
+            $table->foreignId('plantilla_id')->nullable()->constrained('plantillas');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('valorcatalogos');
+        Schema::dropIfExists('plantilladetalles');
     }
 };

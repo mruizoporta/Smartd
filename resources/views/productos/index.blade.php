@@ -1,22 +1,24 @@
 @extends('layouts.panel')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header ">
-                    <div class="row align-items-center">
-                      <div class="col">                        
-                        <h5 class="mb-0">
-                            <span class="glyphicon glyphicon-home"></span> Productos</h5>
-                      </div>
-                      <div class="col text-right">
-                        <a href="{{url('/productos/create')}}" class="btn btn-sm btn-primary edu-btn-yellow " >Nuevo producto</a>
-                      </div>
-                    </div>
-                  </div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel"> 
+      <div class="panel-heading">
+          <h5 class="panel-title"> <span class="glyphicon glyphicon-lock"></span> Materiales</h5>
+        </div>
+
+        <div class="panel-body">
+          <div class="pad-btm form-inline">
+            <div class="row">
+                <div class="col-sm-6 table-toolbar-left">
+                  <a href="{{url('/productos/create')}}"class="btn btn-primary " >
+                    <i class="demo-pli-add icon-fw"></i>Nuevo material
+                  </a>
+                </div>
+                
             </div>
+        </div>
                 <div class="card-body">
                     @if(session('notification'))
                     <div class="alert alert-success" role="alert">
@@ -66,15 +68,17 @@
                             </tr>
                             @endforeach
                             
-                        </tbody>
-                    </table>      
+                          </tbody>
+                        </table>
+            
+    
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
     
-</div>
+        
+    </div>
 
 
 @endsection

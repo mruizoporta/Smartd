@@ -10,7 +10,7 @@
         </div>
         <div class="col text-right">
           <a href="{{url('/catalogos')}}" class="btn btn-sm btn-default">Regresar
-            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="demo-pli-arrow-left icon-fw"></span>
         </a>
        
         </div>
@@ -155,7 +155,7 @@ $(function() {
                       </td>
                       <td>${cantidad}</td>
                       <td>
-                        <button type="button" onclick="eliminar(${producto_id})" class="tabledit-edit-button btn btn-sm btn-default" >
+                        <button type="button" onclick="eliminar(${producto_id})" class="tabledit-edit-button btn btn-sm btn-danger" >
                                         <span class="glyphicon glyphicon-trash"></span>
                                       </button>
 

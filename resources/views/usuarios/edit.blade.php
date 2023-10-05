@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-12 table-toolbar-right">
               <a href="{{url('/usuarios')}}"class="btn btn-primary " > 
-                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="demo-pli-arrow-left icon-fw"></span>
                 Regresar
               </a>
             </div>            

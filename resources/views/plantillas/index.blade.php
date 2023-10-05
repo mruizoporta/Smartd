@@ -5,11 +5,20 @@
     <div class="col-xs-12">
       <div class="panel"> 
         <div class="panel-heading">
-            <h5 class="panel-title"> <span class="glyphicon glyphicon-lock"></span> Usuarios</h5>
+            <h5 class="panel-title"> <span class="glyphicon glyphicon-lock"></span> Plantillas</h5>
           </div>
 
           <div class="panel-body">
-            
+            <div class="pad-btm form-inline">
+              <div class="row">
+                  <div class="col-sm-6 table-toolbar-left">
+                    <a href="{{url('/plantillas/create')}}"class="btn btn-primary " >
+                      <i class="demo-pli-add icon-fw"></i>Nueva plantilla
+                    </a>
+                  </div>
+                  
+              </div>
+          </div>
 
                 <div class="card-body">
                     @if(session('notification'))
@@ -30,15 +39,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($catalogos as $catalogo)
+                            @foreach($plantillas as $plantilla)
 
                             <tr>
-                                <td> {{$catalogo-> id}} </td>
-                                <td> {{$catalogo-> nombre}} </td>
+                                <td> {{$plantilla-> id}} </td>
+                                <td> {{$plantilla-> nombre}} </td>
                                 <td>
-                                  <form action="{{url('/catalogos/'.$catalogo->id.'/inactivar')}}" method="POST">
+                                  <form action="{{url('/plantillas/'.$plantilla->id.'/inactivar')}}" method="POST">
                                       @csrf 
-                                      <a href="{{url('/catalogos/'.$catalogo->id.'/edit')}}" class="tabledit-edit-button btn btn-sm btn-default">
+                                      <a href="{{url('/plantillas/'.$plantilla->id.'/edit')}}" class="tabledit-edit-button btn btn-sm btn-default">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                       </a>
 
@@ -61,10 +70,4 @@
 </div>
 
 
-@endsection
-
-@section('scripts')
-<script 
-    src="{{ asset('js/per/categorias.js')}}">
-</script>
 @endsection

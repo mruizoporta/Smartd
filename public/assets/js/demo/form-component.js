@@ -122,6 +122,23 @@ $(document).on('nifty.ready', function() {
     // http://abpetkov.github.io/switchery/
     // =================================================================
     new Switchery(document.getElementById('demo-sw-checked'));
+    new Switchery(document.getElementById('demo-sw-unchecked'));
+    new Switchery(document.getElementById('demo-sw-clr1'));
+    new Switchery(document.getElementById('demo-sw-clr2'));
+
+   //Plantillas
+    new Switchery(document.getElementById('planswinsumos'));
+    new Switchery(document.getElementById('planswextras'));
+    new Switchery(document.getElementById('planswmanoobra'));
+
+    new Switchery(document.getElementById('demo-sw-clr1'), {color:'#489eed'});
+    new Switchery(document.getElementById('demo-sw-clr2'), {color:'#35b9e7'});
+    new Switchery(document.getElementById('demo-sw-clr3'), {color:'#44ba56'});
+    new Switchery(document.getElementById('demo-sw-clr4'), {color:'#f0a238'});
+    new Switchery(document.getElementById('demo-sw-clr5'), {color:'#e33a4b'});
+    new Switchery(document.getElementById('demo-sw-clr6'), {color:'#2cd0a7'});
+    new Switchery(document.getElementById('demo-sw-clr7'), {color:'#8669cc'});
+    new Switchery(document.getElementById('demo-sw-clr8'), {color:'#ef6eb6'});
 
 
 });

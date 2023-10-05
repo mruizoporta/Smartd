@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MarcaController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -146,6 +147,14 @@ Route::get('/catalogos/{catalogo}/edit', [App\Http\Controllers\CatalogosControll
 Route::post('/catalogos', [App\Http\Controllers\CatalogosController::class, 'store']);
 Route::put('/catalogos/{catalogo}', [App\Http\Controllers\CatalogosController::class, 'update']);
 Route::post('/catalogos/{catalogo}/inactivar', [App\Http\Controllers\CatalogosController::class, 'destroy']);
+
+//Rutas plantillas
+Route::get('/plantillas', [App\Http\Controllers\PlantillaController::class, 'index']);
+Route::get('/plantillas/create', [App\Http\Controllers\PlantillaController::class, 'create']);
+
+//Rutas ordenes
+Route::get('/ordenes', [App\Http\Controllers\OrdentrabajoController::class, 'index']);
+Route::get('/ordenes/create', [App\Http\Controllers\OrdentrabajoController::class, 'create']);
 
 
 

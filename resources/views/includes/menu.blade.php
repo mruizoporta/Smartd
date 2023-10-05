@@ -112,7 +112,7 @@
 							</li>
 				
 							<!--Menu list item-->
-							<li>
+						{{-- 	<li>
 								<a href="#">
 									<i class="demo-pli-pen-5"></i>
 									<span class="menu-title">Catálogos</span>
@@ -130,7 +130,7 @@
 									
 								</ul>
 							</li>
-				
+				 --}}
 							<!--Menu list item-->
 							<li>
 								<a href="#">
@@ -142,7 +142,7 @@
 								<!--Submenu-->
 								<ul class="collapse">
 									<li><a href="{{ url('/almacenes') }}">Almacenes</a></li>
-									<li><a href="{{ url('/productos') }}">Productos</a></li>
+									<li><a href="{{ url('/productos') }}">Materiales</a></li>
 									<li><a href="{{ url('/proveedores') }}">Proveedores</a></li>
 									<li><a href="{{ url('/entradas') }}">Entradas</a></li>
 									<li><a href="{{ url('/salidas') }}">Salidas</a></li>
@@ -173,13 +173,16 @@
 							<li>
 								<a href="#">
 									<i class="demo-pli-repair"></i>
-									<span class="menu-title">Ordenes de trabajo</span>
+									<span class="menu-title">Produccion</span>
 									<i class="arrow"></i>
 								</a>
 				
 								<!--Submenu-->
 								<ul class="collapse">
-									<li><a href="misc-timeline.html">Empresas</a></li>	
+									<li><a href="{{ url('/plantillas') }}">Plantillas</a></li>
+								</ul>
+								<ul class="collapse">
+									<li><a href="{{ url('/ordenes') }}">Ordenes de trabajo</a></li>
 								</ul>
 							</li>
 				

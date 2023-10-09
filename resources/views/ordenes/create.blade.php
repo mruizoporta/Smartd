@@ -1,137 +1,178 @@
-@extends('layouts.panel')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
 
-<div class="row">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Users | Nifty - Admin Template</title>
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Open Sans Font [ OPTIONAL ]-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/nifty.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/demo/nifty-demo-icons.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/pace/pace.min.css')}}" rel="stylesheet">
+    <script src="{{ asset('assets/plugins/pace/pace.min.js')}}"></script>
+    <link href="{{ asset('assets/css/demo/nifty-demo.min.css')}}" rel="stylesheet">
+
+        
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+<body>
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">       
        
-        <div class="col-xs-12">
 
-            <div class="panel"> 
-                <div class="panel-heading">     
-                    <br>    
-                    <div class="text-center pad-btm">
-                        <h3>Nueva orden de trabajo </h3>
-                    </div>                   
-                </div>
-                 <br>
-              
+        <div class="boxed">
 
-                <div class="panel-body">
-                    <div class="pad-btm form-inline">
-                        <div class="row">
-                            <div class="col-sm-12 table-toolbar-right">
-                              <a href="{{url('/ordenes')}}"class="btn btn-primary " >
-                                <i class="demo-pli-arrow-left icon-fw"></i>Regresar
-                              </a>
-                            </div>                            
-                        </div>
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <div id="page-head">
+                    
+                    <!--Page Title-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <div id="page-title">
+                        <h1 class="page-header text-overflow">Users</h1>
                     </div>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End page title-->
+                </div>
 
-                     
+                
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                    
+					  
+					
+					
 					    <div class="row">
-					        <div class="col-sm-6">		
-					            <div>
-					                <ul id="demo-tasklist-upcoming" class="sortable-list tasklist list-unstyled">
-					                    
-                                        <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>                                                   				                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
-					                        </a>
-					                    </li>
-                                        <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>					                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
-					                        </a>
-					                    </li>
-					                    <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>					                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
-					                        </a>
-					                    </li>
-					                </ul>
-					            </div>					
+					        <div class="col-sm-4 col-md-3">				
 					
-					        </div>
-					        <div class="col-sm-6">
-					            <div class="panel panel-bordered panel-info">
-					
-					                <!--Accordion title-->
-					                <div class="panel-heading">
-					                    <h4 class="panel-title">
-					                        <a data-parent="#demo-acc-info-outline" data-toggle="collapse" href="#demo-acd-info-outline-1">Collapsible Group Item #1</a>
-					                    </h4>
-					                </div>
-					
-					                <!--Accordion content-->
-					                <div class="panel-collapse collapse in" id="demo-acd-info-outline-1">
-					                    <div class="panel-body">
-					                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.
+					            <!-- Contact Widget -->
+					            <!---------------------------------->
+					            <div class="panel pos-rel">
+					                <div class="pad-all text-center">
+					                    <div class="widget-control">
+					                        <a href="#" class="add-tooltip btn btn-trans" data-original-title="Favorite"><span class="favorite-color"><i class="demo-psi-star icon-lg"></i></span></a>
+					                        <div class="btn-group dropdown">
+					                            <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
+					                            <ul class="dropdown-menu dropdown-menu-right" style="">
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-recycling"></i> Remove</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-mail"></i> Send a Message</a></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-calendar-4"></i> View Details</a></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-lock-user"></i> Lock</a></li>
+					                            </ul>
+					                        </div>
+					                    </div>
+					                    <a href="#">
+					                        <img alt="ProfileΩ Picture" class="img-lg img-circle mar-ver" src="img\profile-photos\2.png">
+					                        <p class="text-lg text-semibold mar-no text-main">Stephen Tran</p>
+					                        <p class="text-sm">Marketing manager</p>
+					                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean massa.</p>
+					                    </a>
+					                    <div class="pad-top btn-groups">
+					                        <a href="#" class="btn btn-icon demo-pli-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
+					                        <a href="#" class="btn btn-icon demo-pli-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+					                        <a href="#" class="btn btn-icon demo-pli-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
+					                        <a href="#" class="btn btn-icon demo-pli-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
 					                    </div>
 					                </div>
-					            </div>				
+					            </div>
+					            <!---------------------------------->
+					
+					
 					        </div>
+					        <div class="col-sm-4 col-md-3">
+					
+					
+					            <!-- Contact Widget -->
+					            <!---------------------------------->
+					            <div class="panel pos-rel">
+					                <div class="pad-all text-center">
+					                    <div class="widget-control">
+					                        <a href="#" class="add-tooltip btn btn-trans" data-original-title="Favorite"><span class="unfavorite-color"><i class="demo-psi-star icon-lg"></i></span></a>
+					                        <div class="btn-group dropdown">
+					                            <a href="#" class="dropdown-toggle btn btn-trans" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical icon-lg"></i></a>
+					                            <ul class="dropdown-menu dropdown-menu-right" style="">
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-psi-pen-5"></i> Edit</a></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-recycling"></i> Remove</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-mail"></i> Send a Message</a></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-calendar-4"></i> View Details</a></li>
+					                                <li><a href="#"><i class="icon-lg icon-fw demo-pli-lock-user"></i> Lock</a></li>
+					                            </ul>
+					                        </div>
+					                    </div>
+					                    <a href="#">
+					                        <img alt="Profile Picture" class="img-lg img-circle mar-ver" src="img\profile-photos\10.png">
+					                        <p class="text-lg text-semibold mar-no text-main">Brenda Fuller</p>
+					                        <p class="text-sm">Graphics designer</p>
+					                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean massa.</p>
+					                    </a>
+					                    <div class="pad-top btn-groups">
+					                        <a href="#" class="btn btn-icon demo-pli-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
+					                        <a href="#" class="btn btn-icon demo-pli-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+					                        <a href="#" class="btn btn-icon demo-pli-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
+					                        <a href="#" class="btn btn-icon demo-pli-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+					                    </div>
+					                </div>
+					            </div>
+					            <!---------------------------------->
+					
+					
+					        </div>
+					       
 					        
 					    </div>
+					
+					    
                 </div>
-            </div>   
-        </div>
-    </div>  
+                <!--===================================================-->
+                <!--End page content-->
 
-@endsection
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
 
-@push('scripts')
-<script src="{{ asset('assets/js/jquery.min.js')}}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
-<script src="{{ asset('assets/js/nifty.min.js')}}"></script>
-<script src="{{ asset('assets/js/demo/nifty-demo.min.js')}}"></script>
-<script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 
-<script>
-    $(document).on('nifty.ready', function () {
-        
-        $("#demo-tasklist-upcoming, #demo-tasklist-inprogress, #demo-tasklist-completed").sortable({
-            connectWith: ".tasklist",
-            placeholder: "task-placeholder",
-            forcePlaceholderSize: true,
-            update: function (event, ui) {
-                var upcoming = $("#demo-tasklist-upcoming").sortable("toArray");
-                var inprogress = $("#demo-tasklist-inprogress").sortable("toArray");
-                var completed = $("#demo-tasklist-completed").sortable("toArray");
-                $("#demo-output").html("Upcoming: " + window.JSON.stringify(upcoming) + "<br/>" + "In Progress: " + window.JSON.stringify(inprogress) + "<br/>" + "Completed: " + window.JSON.stringify(completed));
-        
-            }
-        }).disableSelection();
             
-    });
-</script>
-@endpush
+           
+        </div>
+
+     
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+
+    
+    
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/js/nifty.min.js')}}"></script>
+    <script src="{{ asset('assets/js/demo/nifty-demo.min.js')}}"></script>
+
+    
+    
+
+</body>
+</html>
+
+

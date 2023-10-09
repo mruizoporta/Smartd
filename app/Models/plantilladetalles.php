@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class plantilla extends Model
+class plantilladetalles extends Model
 {
     use HasFactory;
+
+    public function Plantilla(){
+        return $this->belongsTo(plantillas::class);
+    }
 }

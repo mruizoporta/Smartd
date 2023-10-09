@@ -6,50 +6,65 @@
        
         <div class="col-xs-12">
 
-            <div class="panel"> 
-                <div class="panel-heading">     
-                    <br>    
-                    <div class="text-center pad-btm">
-                        <h3>Ordenes de trabajo </h3>
-                        <p>Puede cambiar la prioridad de la orden <strong class="text-main">arrastrando y soltando </strong>en el el orden que desee.</p>
+            <div class="panel panel-body">
+
+                <div class="panel-heading text-center mar-btm">     
+
+                    <div class="sd-header pad-btm">
+                        <h3>Ordenes de trabajo</h3>
+                        
+                        <span class="label label-default mar-rgt">Pendientes
+                            <span class="badge sd-badges-pendents mar-lft">2</span>
+                        </span>
+
+                        <span class="label label-default mar-rgt">En progreso
+                            <span class="badge sd-badges-process mar-lft">3</span>
+                        </span>
+
+                        <span class="label label-default ">Completadas
+                            <span class="badge sd-badges-complete mar-lft">4</span>
+                        </span>
+                      
                     </div>
-                    <div class="text-center pad-ver">                      
-                        <div class="select">
-                            <select id="demo-ease">
-                                <option value="date-created" selected="">-Tenico-</option>
-                                <option value="date-modified">Date Modified</option>
-                                <option value="frequency-used">Frequency Used</option>
-                                <option value="alpabetically">Alpabetically</option>
-                                <option value="alpabetically-reversed">Alpabetically Reversed</option>
-                            </select>
-                        </div>
-                        <div class="select">
-                            <select id="demo-ease">
-                                <option value="date-created" selected="">-Priority-</option>
-                                <option value="date-modified">Success</option>
-                                <option value="frequency-used">Info</option>
-                                <option value="alpabetically">Warning</option>
-                                <option value="alpabetically-reversed">Danger</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-default">Filtrar</button>
-                    </div>
+                    
                 </div>
-                 <br>
-              
 
                 <div class="panel-body">
-                    <div class="pad-btm form-inline">
+                    <div class="pad-btm text-center form-inline">
                         <div class="row">
-                            <div class="col-sm-6 table-toolbar-left">
-                              <a href="{{url('/ordenes/create')}}"class="btn btn-primary " >
-                                <i class="demo-pli-add icon-fw"></i>Nueva orden 
-                              </a>
-                            </div>                
+                            <div class="col-lg-12">
+                                <a data-target="#demo-default-modal" data-toggle="modal" id="bootbox-plantilla-h-form" class="btn btn-primary" >
+                                    <i class="demo-pli-add icon-fw"></i> Nueva orden 
+                                </a>  
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="pad-ver">                 
+                                    <div class="select">
+                                        <select id="demo-ease">
+                                            <option value="date-created" selected="">-Tenico-</option>
+                                            <option value="date-modified">Date Modified</option>
+                                            <option value="frequency-used">Frequency Used</option>
+                                            <option value="alpabetically">Alpabetically</option>
+                                            <option value="alpabetically-reversed">Alpabetically Reversed</option>
+                                        </select>
+                                    </div>
+                                    <div class="select">
+                                        <select id="demo-ease">
+                                            <option value="date-created" selected="">-Priority-</option>
+                                            <option value="date-modified">Success</option>
+                                            <option value="frequency-used">Info</option>
+                                            <option value="alpabetically">Warning</option>
+                                            <option value="alpabetically-reversed">Danger</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-default">
+                                        Filtrar
+                                    </button>
+                                </div>
+                            </div>
+                            
                         </div>
                       </div>
-
-                        <hr class="new-section-md bord-no">
 					    <div class="row">
 					        <div class="col-sm-4">
 					
@@ -57,12 +72,12 @@
 					            <!-- Upcoming Tasklist -->
 					            <!---------------------------------->
 					            <div>					              
-					                <h4 class="text-main">Pendiente</h4>					                
+					                <h4 class="title-pendents header-title">Pendiente</h4>					                
 					                <hr>
 					                <ul id="demo-tasklist-upcoming" class="sortable-list tasklist list-unstyled">
 					                    
-                                        <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+                                        <li id="demo-tasklist-7" class="task-pendents">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-pendents">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -76,8 +91,8 @@
 					                       
 					                        </a>
 					                    </li>
-                                        <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+                                        <li id="demo-tasklist-7" class="task-pendents">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-pendents">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -91,8 +106,8 @@
 					                       
 					                        </a>
 					                    </li>
-					                    <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+					                    <li id="demo-tasklist-7" class="task-pendents">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-pendents">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -112,11 +127,11 @@
 					        </div>
 					        <div class="col-sm-4">
 					            <div>
-					                <h4 class="text-main header-title m-t-0">En progreso</h4>					               
+					                <h4 class="title-process header-title">En progreso</h4>					               
 					                <hr>					
 					                <ul id="demo-tasklist-inprogress" class="sortable-list tasklist list-unstyled">
-                                        <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+                                        <li id="demo-tasklist-7" class="task-process">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-process">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -130,8 +145,8 @@
 					                       
 					                        </a>
 					                    </li>					                 
-					                    <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+					                    <li id="demo-tasklist-7" class="task-process">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-process">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -145,8 +160,8 @@
 					                       
 					                        </a>
 					                    </li>
-					                    <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+					                    <li id="demo-tasklist-7" class="task-process">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-process">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -165,11 +180,11 @@
 					        </div>
 					        <div class="col-sm-4">
 					            <div>
-					                <h4 class="text-main header-title m-t-0">Completada</h4>					              
+					                <h4 class="title-complete header-title">Completada</h4>					              
 					                <hr>					
 					                <ul id="demo-tasklist-completed" class="sortable-list tasklist list-unstyled">					                  
-					                    <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+					                    <li id="demo-tasklist-7" class="task-complete">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-complete">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -183,8 +198,8 @@
 					                       
 					                        </a>
 					                    </li>
-					                    <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+					                    <li id="demo-tasklist-7" class="task-complete">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-complete">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -198,8 +213,8 @@
 					                       
 					                        </a>
 					                    </li>
-                                        <li id="demo-tasklist-7" class="task-info">                                            
-					                        <p class="text-bold text-main text-sm">#68464</p>
+                                        <li id="demo-tasklist-7" class="task-complete">                                            
+					                        <p><span class="text-bold sd-badges sd-badges-complete">#68464</span></p>
                                             <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
                                             <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
 					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
@@ -223,6 +238,40 @@
         </div>
     </div>  
 
+    
+<div class="modal fade" id="demo-default-modal" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+  
+            <!--Modal header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title">Orden de trabajo</h4>
+            </div>
+  
+            <!--Modal body-->
+            <div class="modal-body">
+                <form action="{{url('/ordenes/create')}}" method="POST">
+                    @csrf
+                   
+                    <label class="form-label" for="nombreplantilla">Plantilla</label>                
+                    <select class="form-control" name="plantilla_id">
+                    <option value=""> --Seleccione la plantilla--</option>
+                    @foreach ($plantillas as $plantilla)
+                    <option value="{{ $plantilla -> id }}"> {{$plantilla -> nombre}} </option>
+                    @endforeach  
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-sm btn-success" > Aceptar</button>
+      
+              </form>
+            </div>
+  
+           
+        </div>
+    </div>
+  </div>
 @endsection
 
 @push('scripts')
@@ -230,6 +279,9 @@
 <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('assets/js/nifty.min.js')}}"></script>
 <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+
+<script src="{{ asset('assets/js/demo/ui-modals.js')}}"></script>
+<script src="{{ asset('assets/plugins/bootbox/bootbox.min.js')}}"></script>
 
 <script>
     $(document).on('nifty.ready', function () {

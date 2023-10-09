@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\plantilla;
-use App\Models\plantilladetalle;
+use App\Models\plantillas;
+use App\Models\plantilladetalles;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -23,14 +23,14 @@ class PlantillaController extends Controller
         return view('plantillas.create');
     }
 
-    public function edit(plantilla $plantilla){ 
+    public function edit(plantillas $plantilla){ 
         return view('plantillas.edit', compact('plantilla'));        
      }
 
 
     public function index()
     {
-        $plantillas= plantilla::all()
+        $plantillas= plantillas::all()
         ->where('activo',true);   
 
         return view('plantillas.index', compact('plantillas'));
@@ -43,32 +43,35 @@ class PlantillaController extends Controller
         try
         {
             DB::beginTransaction();
-            $plantilla = new plantilla();
+            $plantilla = new plantillas();
             $plantilla->empresa_id=1;//$request->empresa_id;       
-            $plantilla->nombre=$request->nombre;  
-            $plantilla->insumosoperativps=$request->insumosoperativps;   
-            $plantilla->manoobraexterna=$request->manoobraexterna;   
-            $plantilla->horasextras=$request->horasextras;                 
-            $plantilla->save();
-         
-             //Insertamos el detalle de la plantolla
-            $ids=$request->get('ids');
+            $plantilla->nombre=$request->nombre; 
+
+            if (is_null($request->insumosoperativos)){$plantilla->insumosoperativos=false;}
+            else{$plantilla->insumosoperativos=true;}
+
+            if (is_null($request->manoobraexterna)){$plantilla->manoobraexterna=false;}
+            else{$plantilla->manoobraexterna=true;}
+
+            if (is_null($request->horasextras)){$plantilla->horasextras=false;}
+            else{$plantilla->horasextras=true;} 
+                                    
+            $plantilla->save();         
+            
+             //Insertamos el detalle de la plantilla           
             $tareas=$request->get('tarea');
             $descripciones=$request->get('descripcion');
-            $ordenes=$request->get('oden');
+            $ordenes=$request->get('orden');
            
             $cont=0;
 
             while ($cont < count($tareas)){
-                if ($ids[$cont]==0)
-                {
-                    $detalle = new plantilladetalle();
-                    $detalle-> plantilla_id=$plantilla->id;
-                    $detalle-> tarea=$tareas[$cont]; 
-                    $detalle-> descripcion =  $descripciones[$cont];
-                    $detalle-> orden =  $ordenes[$cont];
-                    $detalle-> save();
-                }
+                $detalle = new plantilladetalles();
+                $detalle-> plantilla_id=$plantilla->id;
+                $detalle-> tarea=$tareas[$cont]; 
+                $detalle-> descripcion =  $descripciones[$cont];
+                $detalle-> orden =  $ordenes[$cont];
+                $detalle-> save();                
                 $cont = $cont +1;
             }           
 
@@ -86,21 +89,27 @@ class PlantillaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(plantilla $plantilla)
+    public function show(plantillas $plantilla)
     {
         //
     }
 
-    public function update(Request $request, plantilla $plantilla)   {
+    public function update(Request $request, plantillas $plantilla)   {
         // return $request;
          try
          {
              DB::beginTransaction();
              $plantilla->empresa_id=1;//$request->empresa_id;       
              $plantilla->nombre=$request->nombre;  
-             $plantilla->insumosoperativps=$request->insumosoperativps;   
-             $plantilla->manoobraexterna=$request->manoobraexterna;   
-             $plantilla->horasextras=$request->horasextras;                
+             
+             if (is_null($request->insumosoperativos)){$plantilla->insumosoperativos=false;}
+             else{$plantilla->insumosoperativos=true;}
+ 
+             if (is_null($request->manoobraexterna)){$plantilla->manoobraexterna=false;}
+             else{$plantilla->manoobraexterna=true;}
+ 
+             if (is_null($request->horasextras)){$plantilla->horasextras=false;}
+             else{$plantilla->horasextras=true;}               
              $plantilla->save();
  
              //Eliminamos los valores  
@@ -117,7 +126,7 @@ class PlantillaController extends Controller
              while ($cont < count($tareas)){
                  if ($ids[$cont]==0)
                  {
-                     $detalle = new plantilladetalle();
+                     $detalle = new plantilladetalles();
                      $detalle-> plantilla_id=$plantilla->id;
                      $detalle-> tarea=$tareas[$cont]; 
                      $detalle-> descripcion =  $descripciones[$cont];
@@ -141,7 +150,7 @@ class PlantillaController extends Controller
      /**
       * Remove the specified resource from storage.
       */
-     public function destroy(plantilla $plantilla)
+     public function destroy(plantillas $plantilla)
      {
          $plantilla->activo=false;     
          $plantilla->save();

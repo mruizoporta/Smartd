@@ -16,7 +16,7 @@
                       <i class="demo-pli-add icon-fw"></i>Nueva plantilla
                     </a>
                   </div>
-                  
+                 
               </div>
           </div>
 
@@ -68,6 +68,7 @@
 
     
 </div>
+
 
 
 @endsection

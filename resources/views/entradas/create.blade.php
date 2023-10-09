@@ -100,8 +100,7 @@
       
       <h5 class="m-t-lg with-border">Detalle de los Productos</h5>
 
-      <div class="row">
-       
+      <div class="row">       
         <div class="col-lg-12">
           <div class="input-group">  
             <div class="form-group">                
@@ -118,36 +117,32 @@
       </div>
 
 
-      <div class="row">
-         
-        <div class="col-lg-6">
-          <div class="input-group">  
-            <fieldset class="form-group">
-              <label class="form-label" for="lblpreciocontado">Cantidad</label>
-              <input type="number" class="form-control" name="cantidad" id="cantidad"  >
-            </fieldset>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+      <div class="row">         
+          <div class="col-lg-6">
+            <div class="input-group">  
+              <fieldset class="form-group">
+                <label class="form-label" for="lblpreciocontado">Cantidad</label>
+                <input type="number" class="form-control" name="cantidad" id="cantidad"  >
+              </fieldset>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
 
-        <div class="col-lg-6">
-          <div class="input-group">  
-            <fieldset class="form-group">
-              <label for="lblmargenutilidadcredito"> Costo </label>
-              <input type="text" name="costo" id="costo" class="form-control"  >
-            </fieldset>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+          <div class="col-lg-6">
+            <div class="input-group">  
+              <fieldset class="form-group">
+                <label for="lblmargenutilidadcredito"> Costo </label>
+                <input type="text" name="costo" id="costo" class="form-control"  >
+              </fieldset>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
       </div>
 
-      <div class="row">
-         
-      
-      <div class="col text-center">
-        <a onclick="agregar();"  class="btn btn-sm btn-default">
-          <span class="glyphicon glyphicon-plus"></span>
-      </a>
-
-   </div><!-- /.col-lg-6 -->
+      <div class="row">  
+        <div class="col text-center">
+          <a onclick="agregar();"  class="btn btn-sm btn-default">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        </div><!-- /.col-lg-6 -->
       </div>
 
 
@@ -174,7 +169,7 @@
             </tbody>
           
         </table>      
-    </div> 
+      </div> 
 
             <button type="submit" class="btn btn-sm btn-success" > Registrar entrada</button>
             <br>

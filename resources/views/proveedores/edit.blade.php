@@ -60,8 +60,7 @@
 
           <fieldset class="form-group">
             <label for="lblintereses">Direccion </label>
-            <textarea rows="5"  name="direccion"  class="form-control" >{{$proveedor->persona->direccion}}</textarea>
-          
+            <textarea rows="5"  name="direccion"  class="form-control" >{{$proveedor->persona->direccion}}</textarea>          
           </fieldset>      
          
           <h5 class="m-t-lg with-border">Informacion del contacto</h5>

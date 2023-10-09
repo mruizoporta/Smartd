@@ -37,65 +37,50 @@
     
           <div class="row">
 
-              <div class="col-lg-8">
-                <div class="input-group"> 
+              <div class="col-lg-6">
                   <fieldset class="form-group">
                       <label class="form-label" for="name"> Nombre </label>
                       <input type="text" name="nombre" class="form-control" value="{{$catalogo->nombre}}" require> 
                   </fieldset>
-                </div><!-- /input-group -->
               </div><!-- /.col-lg-6 -->
-
-                 
-            <div class="col-lg-8">
-              <div class="input-group"> 
+  
+            <div class="col-lg-6">
                 <fieldset class="form-group">
                   <label for="lblintereses">Descripcion </label>
                   <textarea rows="3"  name="descripcion"  class="form-control" >{{ $catalogo->descripcion}}</textarea>                
                 </fieldset>
-              </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
 
           </div>
-
-
-        <h5 class="m-t-lg with-border">Detalle de valores</h5>
-
-        <div class="row">
-         
-          <div class="col-lg-4">          
-              <div class="form-group">                
-                <div class="input-group"> 
-                  <fieldset class="form-group">
-                      <label class="form-label" for="name"> Codigo </label>
-                      <input type="text" name="codigo" id="codigo"  class="form-control" > 
-                  </fieldset>
-                </div><!-- /input-group -->
-              </div>      
-          </div><!-- /.col-lg-6 -->
-        </div>
-  
   
         <div class="row">
-           
+          <div class="col-lg-12">
+            <hr>
+            <h4 class="h4">Detalle de valores</h4>
+          </div>
+
           <div class="col-lg-6">
-            <div class="input-group">  
-              <fieldset class="form-group">
-                <label class="form-label" for="lblnombrevalor">Nombre</label>
-                <div class="row">
-                  <div class="col-lg-8">
-                    <input type="text" class="form-control" name="nombrevalor" id="nombrevalor"  >
-                  </div>
-                  <div class="col-lg-4">
-                  <a onclick="agregar();"  class="btn btn-sm btn-default">
-                    <span class="glyphicon glyphicon-plus"></span>
-                  </a>
-                  </div>
+            
+            <fieldset class="form-group">
+                <label class="form-label" for="name"> Codigo </label>
+                <input type="text" name="codigo" id="codigo"  class="form-control" > 
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label class="form-label" for="lblnombrevalor">Nombre</label>
+              <div class="row">
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" name="nombrevalor" id="nombrevalor"  >
                 </div>
-              </fieldset>
-            </div><!-- /input-group -->
-           
-          </div><!-- /.col-lg-6 -->
+                <div class="col-lg-4">
+                <a onclick="agregar();"  class="btn btn-sm btn-mint">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </a>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
 
           <div class="col-lg-6">
             <div class="table-responsive">
@@ -124,7 +109,7 @@
                           {{$valor->  codigo}} </td>
                         <td> {{$valor-> descripcion}} </td>  
                         <td>
-                          <button type="button" onclick="eliminar(${codigo})" class="tabledit-edit-button btn btn-sm btn-default" >
+                          <button type="button" onclick="eliminar(${codigo})" class="tabledit-edit-button btn btn-sm btn-danger" >
                                           <span class="glyphicon glyphicon-trash"></span>
                                         </button>                         
                         </td>

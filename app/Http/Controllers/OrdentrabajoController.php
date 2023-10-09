@@ -2,7 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
+use App\Models\Empleado;
 use App\Models\ordentrabajo;
+use App\Models\plantilladetalles;
+use App\Models\plantillas;
+use App\Models\Producto;
+use App\Models\vw_catalogos;
+use App\Models\vw_clientes;
+use App\Models\vw_empleados;
 use Illuminate\Http\Request;
 
 class OrdentrabajoController extends Controller
@@ -15,12 +23,35 @@ class OrdentrabajoController extends Controller
         $ordenes= ordentrabajo::all()
         ->where('activo',true);   
 
-        return view('ordenes.index', compact('ordenes'));
+        $plantillas= plantillas::all()
+        ->where('activo',true);  
+
+        return view('ordenes.index', compact('ordenes','plantillas'));
     }
 
-    public function create()
-     { 
-         return view('ordenes.edit');
+    public function create(Request $request)
+     {  
+        $tareas = plantilladetalles::select("*")
+        ->where('plantilla_id',$request->plantilla_id)
+        ->orderBy("orden")
+        ->get();        
+
+        $tecnicos = vw_empleados::all();
+        $clientes = vw_clientes::all();
+
+        $productos = Producto::all()
+        ->where('activo',true);
+
+        $medidas = vw_catalogos::all()
+        ->where('nombre','Unidad_Medida');
+
+        return view('ordenes.edit', compact('tareas','tecnicos','clientes','productos','medidas'));
+     }
+
+     public function edit()
+     {      
+       
+        return view('ordenes.create');
      }
 
     /**

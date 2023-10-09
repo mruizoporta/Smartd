@@ -1,13 +1,13 @@
 
 .navbar-header:before, #navbar-container {
-    background-color: #995503;
+    background-color: #ec8202;
 }
 
 #content-container:before,
 .navbar-top-links>li>a:hover,
 .navbar-top-links>.open>a,
 .navbar-top-links>.open>a:focus {
-    background-color: #ec8202 !important;
+    background-color: #63615e !important;
 }
 
 .navbar-top-links>.open>a,
@@ -39,7 +39,62 @@
     color: #63615e;
 }
 
+/* header title */
+.panel-body .box-typical h1,.panel-body .box-typical h2,
+.panel-body .box-typical h3,.panel-body .box-typical h4,
+.panel-body .box-typical h5,.panel-body .box-typical h6 {
+    color:#3b2202;
+}
+
+.panel-body .panel-heading h1,.panel-body .panel-heading h2,
+.panel-body .panel-heading h3,.panel-body .panel-heading h4,
+.panel-body .panel-heading h5,.panel-body .panel-heading h6 {
+    color:#3b2202;
+}
+
+/* Badges */
+
+.sd-badges {
+    padding:.4rem .6rem;
+    border-radius: 6px;
+}
+.sd-badges-complete {
+    color: #fff;
+    background-color: #219ebc;
+}
+.sd-badges-process {
+    color: #fff;
+    background-color: #888586;
+}
+.sd-badges-pendents {
+    color: #fff;
+    background-color: #883d95;
+} 
+
+
+/*Title color*/
+.title-complete {color: #219ebc;}
+.title-process {color: #888586;}
+.title-pendents {color: #883d95;}
+
+/* tasklist */
+.task-complete {border-left-color: #219ebc !important;}
+.task-process {border-left-color: #888586 !important;}
+.task-pendents {border-left-color: #883d95 !important;} 
+
 /* -- Buttons -- */
+
+.btn-default, .btn-default:focus {
+    background-color: #fff;
+    border-color: rgba(0,0,0,0.5) !important;
+    color: #333;
+}
+
+.btn-default:hover {
+    border-color: rgba(0,0,0,0.5) !important;
+    color: #333 !important;
+}
+
 .btn-primary, .btn-primary:focus {
     background-color: #3b2202 !important;
     border-color: #3b2202 !important;
@@ -74,6 +129,12 @@
 td > a.btn-link {color: #995503;}
 .btn-link:hover, .btn-link:focus, .btn-link:active {
     color: #3b2202;
+}
+
+/* Forms */
+
+.panel-body .box-typical .form-group > label {
+    font-weight: bold;
 }
 
 /* Paneles Dashboard */
@@ -123,4 +184,12 @@ td > a.btn-link {color: #995503;}
 
 #footer .pad-rgt {
     padding-right: 45px;
+}
+
+/*// Responsive Mobile //*/
+
+@media (max-width:520px) {
+    .navbar-content {
+        background-color: #ec8202;
+    }
 }

@@ -15,8 +15,7 @@
                   <a href="{{url('/empresas')}}"class="btn btn-primary " >
                     <i class="demo-pli-arrow-left icon-fw"></i>Regresar
                   </a>
-                </div>
-                
+                </div>                
             </div>
         </div>
     
@@ -50,7 +49,7 @@
                       <div class="input-group">  
                         <fieldset class="form-group">                
                           <label class="form-label" for="nombrecategoria">Incluye insumos operativos</label>                
-                          <input id="demo-sw-checked" type="checkbox" checked="">
+                          <input id="demo-sw-checked" name="insumosoperativos" type="checkbox" checked="">
                         </fieldset>         
                       </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
@@ -61,7 +60,7 @@
                       <div class="input-group"> 
                         <fieldset class="form-group">
                           <label class="form-label" for="name"> Incluye horas extras </label>                  
-                          <input id="demo-sw-unchecked" type="checkbox" checked="">
+                          <input id="demo-sw-unchecked" name="horasextras" type="checkbox" checked="">
                         </fieldset>
                       </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->          
@@ -72,7 +71,7 @@
                       <div class="input-group"> 
                         <fieldset class="form-group">
                           <label class="form-label" for="name"> Incluye mano de obra externa </label>                  
-                          <input id="demo-sw-clr1" type="checkbox" checked="">
+                          <input id="demo-sw-clr1" name ="manoobraexterna" type="checkbox" checked="">
                         </fieldset>
                       </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
@@ -107,7 +106,7 @@
               <div class="row">                    
                     <fieldset class="form-group">
                       <label class="form-label" for="lblpreciocontado">Descripcion</label>
-                      <textarea rows="5" id="descripcion"  name="descripcion"  class="form-control"   ></textarea>
+                      <textarea rows="5" id="descripcion"  name="descripcion"  class="form-control" ></textarea>
                     </fieldset>
               </div>
           

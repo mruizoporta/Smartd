@@ -151,12 +151,17 @@ Route::post('/catalogos/{catalogo}/inactivar', [App\Http\Controllers\CatalogosCo
 //Rutas plantillas
 Route::get('/plantillas', [App\Http\Controllers\PlantillaController::class, 'index']);
 Route::get('/plantillas/create', [App\Http\Controllers\PlantillaController::class, 'create']);
+Route::get('/plantillas/{plantilla}/edit', [App\Http\Controllers\PlantillaController::class, 'edit']);
 Route::post('/plantillas', [App\Http\Controllers\PlantillaController::class, 'store']);
+Route::put('/plantillas/{plantilla}', [App\Http\Controllers\PlantillaController::class, 'update']);
 
 //Rutas ordenes
 Route::get('/ordenes', [App\Http\Controllers\OrdentrabajoController::class, 'index']);
 Route::post('/ordenes/create', [App\Http\Controllers\OrdentrabajoController::class, 'create']);
-Route::get('/ordenes/edit', [App\Http\Controllers\OrdentrabajoController::class, 'edit']);
+Route::get('/ordenes/{orden}/edit', [App\Http\Controllers\OrdentrabajoController::class, 'edit']);
+Route::post('/ordenes', [App\Http\Controllers\OrdentrabajoController::class, 'store']);
+Route::post('/ordenes/clientes', [App\Http\Controllers\ClienteController::class, 'storeorden']);
+
 
 
 

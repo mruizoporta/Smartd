@@ -7,6 +7,7 @@ use App\Http\Requests\LoginFormRequest;
 use App\Models\Rol;
 use App\Models\Sucursal;
 use App\Models\sucursalusuario;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;

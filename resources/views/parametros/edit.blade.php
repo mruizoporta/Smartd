@@ -36,7 +36,22 @@
           <div class="form-group">
             <label for="name"> Porcentaje / utilidad credito </label>
             <input type="number" name="porcentajeutilidadcredito" class="form-control" value="{{ $parametro->porcentajeutilidadcredito}}" require> </input>
-        </div>      
+          </div>   
+          
+          <div class="form-group">
+            <label for="name"> Porcentaje /Insumos operativos </label>
+            <input type="number" name="porcentajeinsumos" class="form-control" value="{{ $parametro->porcentajeinsumos}}" require> </input>
+          </div>   
+
+          <div class="form-group">
+            <label for="name"> Porcentaje / Mano de obra externa </label>
+            <input type="number" name="porcentajemanoexterna" class="form-control" value="{{ $parametro->porcentajemanoexterna}}" require> </input>
+          </div>   
+
+          <div class="form-group">
+            <label for="name"> Porcentaje /Horas extras </label>
+            <input type="number" name="porcentajehorasextras" class="form-control" value="{{ $parametro->porcentajehorasextras}}" require> </input>
+          </div>   
 
             <button type="submit" class="btn btn-sm btn-success" > Guardar parametros</button>
         </form>

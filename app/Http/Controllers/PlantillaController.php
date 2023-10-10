@@ -24,7 +24,12 @@ class PlantillaController extends Controller
     }
 
     public function edit(plantillas $plantilla){ 
-        return view('plantillas.edit', compact('plantilla'));        
+
+        $detalles = plantilladetalles::select("*")
+        ->where('plantilla_id',$plantilla->id)      
+        ->get();  
+       
+        return view('plantillas.edit', compact('plantilla','detalles'));        
      }
 
 
@@ -113,28 +118,25 @@ class PlantillaController extends Controller
              $plantilla->save();
  
              //Eliminamos los valores  
-             DB::table('plantilladetalles')->where('plantilla_id', '=', $plantilla->id)->delete();
+            // DB::table('plantilladetalles')->where('plantilla_id', '=', $plantilla->id)->delete();
                
-              //Insertamos los productos nuevos
-             $ids=$request->get('ids');
+             //Insertamos el detalle de la plantilla           
              $tareas=$request->get('tarea');
              $descripciones=$request->get('descripcion');
-             $ordenes=$request->get('oden');
+             $ordenes=$request->get('orden');
             
              $cont=0;
  
              while ($cont < count($tareas)){
-                 if ($ids[$cont]==0)
-                 {
-                     $detalle = new plantilladetalles();
-                     $detalle-> plantilla_id=$plantilla->id;
-                     $detalle-> tarea=$tareas[$cont]; 
-                     $detalle-> descripcion =  $descripciones[$cont];
-                     $detalle-> orden =  $ordenes[$cont];
-                     $detalle-> save();
-                 }
+                 $detalle = new plantilladetalles();
+                 $detalle-> plantilla_id=$plantilla->id;
+                 $detalle-> tarea=$tareas[$cont]; 
+                 $detalle-> descripcion =  $descripciones[$cont];
+                 $detalle-> orden =  $ordenes[$cont];
+                 $detalle-> save();                
                  $cont = $cont +1;
              }           
+  
  
              DB::commit();  
          

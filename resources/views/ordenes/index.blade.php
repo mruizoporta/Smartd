@@ -75,52 +75,23 @@
 					                <h4 class="title-pendents header-title">Pendiente</h4>					                
 					                <hr>
 					                <ul id="demo-tasklist-upcoming" class="sortable-list tasklist list-unstyled">
-					                    
+                                        @foreach ($ordenespendientes as $ordenpendiente)
                                         <li id="demo-tasklist-7" class="task-pendents">                                            
-					                        <p><span class="text-bold sd-badges sd-badges-pendents">#68464</span></p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>                                                   				                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
+					                        <p><span class="text-bold sd-badges sd-badges-pendents">#{{ $ordenpendiente->id }}</span></p>
+                                            <p class="text-bold text-main text-sm">Cliente: {{$ordenpendiente->nombrecompleto }}</p>
+                                            <p class="text-bold text-main text-sm">Fecha orden: {{ $ordenpendiente->fechaorden }}</p>
+					                        <p class="pad-btm bord-btm">{{ $ordenpendiente->comentarios }} </p>
+                                            <span class="text-sm"><i class="demo-pli-shopping-bag icon-lg text-main"></i>C${{ number_format($ordenpendiente->grantotalsinadicional,2) }} </span>
+					                        <br>
+                                            <p class="pad-btm bord-btm">{{ $ordenpendiente->Tecnicos }} </p>
+                                           
+                                            <a href="#" class="task-footer">	
+                                                <a href="{{url('/ordenes/'.$ordenpendiente->id.'/edit')}}"
+                                                    class="btn btn-sm btn-success"><i class="icon-lg demo-pli-arrow-right"></i> Iniciar </a>					                       
 					                        </a>
 					                    </li>
-                                        <li id="demo-tasklist-7" class="task-pendents">                                            
-					                        <p><span class="text-bold sd-badges sd-badges-pendents">#68464</span></p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>					                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
-					                        </a>
-					                    </li>
-					                    <li id="demo-tasklist-7" class="task-pendents">                                            
-					                        <p><span class="text-bold sd-badges sd-badges-pendents">#68464</span></p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>					                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
-					                        </a>
-					                    </li>
+                                        @endforeach  
+                                      
 					                </ul>
 					            </div>					
 					
@@ -130,51 +101,27 @@
 					                <h4 class="title-process header-title">En progreso</h4>					               
 					                <hr>					
 					                <ul id="demo-tasklist-inprogress" class="sortable-list tasklist list-unstyled">
+                                        @foreach ($ordenesprogreso as $ordenprogreso)                                        
                                         <li id="demo-tasklist-7" class="task-process">                                            
-					                        <p><span class="text-bold sd-badges sd-badges-process">#68464</span></p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
+					                        <p><span class="text-bold sd-badges sd-badges-process">#{{ $ordenprogreso->id }}</span></p>
+                                            <p class="text-bold text-main text-sm">Cliente: {{$ordenprogreso->nombrecompleto }}</p>
+                                            <p class="text-bold text-main text-sm">Fecha inicio: {{ $ordenprogreso->fechaorden }}</p>
+					                        <p class="pad-btm bord-btm"> {{ $ordenprogreso->comentarios }} </p>
+                                            <span class="text-sm"><i class="demo-pli-shopping-bag icon-lg text-main"></i>C${{ number_format($ordenprogreso->grantotalsinadicional,2) }} </span>
+					                        <span class="box-inline">
+                                                <label class="label label-success">En Impresion</label>				                               
+                                            </span> 
+                                            <p class="pad-btm bord-btm">{{ $ordenprogreso->Tecnicos }} </p>
+					                        
                                             <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>				                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
+                                                <a href="{{url('/ordenes/'.$ordenprogreso->id.'/edit')}}"
+                                                    class="btn btn-sm btn-primary"><i class="icon-lg demo-pli-arrow-right"></i> Trabajar </a>                                              
+                                                                                          
 					                        </a>
-					                    </li>					                 
-					                    <li id="demo-tasklist-7" class="task-process">                                            
-					                        <p><span class="text-bold sd-badges sd-badges-process">#68464</span></p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>					                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
-					                        </a>
+                                           
 					                    </li>
-					                    <li id="demo-tasklist-7" class="task-process">                                            
-					                        <p><span class="text-bold sd-badges sd-badges-process">#68464</span></p>
-                                            <p class="text-bold text-main text-sm">Cliente: Milagros Ruiz</p>
-                                            <p class="text-bold text-main text-sm">Fecha inicio: Milagros Ruiz</p>
-					                        <p class="pad-btm bord-btm">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. </p>
-                                            <p class="pad-btm bord-btm">Francisco Urbina </p>
-					                       
-                                            <a href="#" class="task-footer">
-					                            <span class="box-inline">
-					                                <label class="label label-success">En Impresion</label>				                               
-					                            </span>
-                                                <span class="text-sm"><i class="demo-pli-clock icon-fw text-main"></i>9:25</span>
-					                       
-					                        </a>
-					                    </li>
+                                        @endforeach 					                 
+					                   
 					                </ul>
 					            </div>					
 					        </div>
@@ -271,7 +218,8 @@
            
         </div>
     </div>
-  </div>
+</div>
+
 @endsection
 
 @push('scripts')

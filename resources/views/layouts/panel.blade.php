@@ -77,9 +77,12 @@
 
 
     <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
-    <script src="{{ asset('assets/js/nifty.min.js')}}"></script>
-    <script src="{{ asset('assets/js/demo/nifty-demo.min.js')}}"></script>
-   
+    <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/js/nifty.min.js')}}"></script>  
+    
+  
+
+   {{-- 
     <script src="{{ asset('assets/plugins/switchery/switchery.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js')}}"></script>
@@ -87,14 +90,21 @@
     <script src="{{ asset('assets/plugins/select2/js/select2.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script> 
-    <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>       
-    <script src="{{ asset('assets/js/demo/form-file-upload.js')}}"></script>
+
+    <script src="{{ asset('assets/js/demo/form-component.js')}}"></script>
+    <script src="{{ asset('assets/js/demo/nifty-demo.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/dropzone/dropzone.min.js')}}"></script> --}} 
+
+    {{-- <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>       
+   
     <script src="{{ asset('assets/js/demo/form-component.js')}}"></script> 
-   
-    <script src="{{ asset('assets/js/demo/dashboard-2.js')}}"></script>  
-   
-    <script src="{{ asset('assets/plugins/dropzone/dropzone.min.js')}}"></script>    
-    
+    <script src="{{ asset('assets/js/demo/nifty-demo.min.js')}}"></script>
+
+    <script src="{{ asset('assets/js/demo/dashboard-2.js')}}"></script>     
+      
+     --}}
+
+     
     
     
 

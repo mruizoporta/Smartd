@@ -34,64 +34,66 @@
       @endif
       
 		<div class="box-typical box-typical-padding">
-      <form action="{{url('/proveedores')}}" method="POST" enctype="multipart/form-data">
-          @csrf  
+        <form action="{{url('/proveedores')}}" method="POST" enctype="multipart/form-data">
+            @csrf  
+              <fieldset class="form-group">
+                  <label class="form-label" for="lblrazonsocial"> Razon Social </label>
+                  <input type="text" name="razonsocial" class="form-control" value="{{old('razonsocial')}}" require> </input>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <label class="form-label" for="lblidentificacion">Número RUC</label>             
+                <input type="text" name="identificacion" class="form-control" value="{{old('identificacion')}}" require> </input>
+              </fieldset>  
+
+              <fieldset class="form-group">
+                <label class="form-label" for="lblcorreo">Correo electrónico </label>
+                <input type="correo" class="form-control" name="correo" placeholder="correo electrónico" value="{{old('correo')}}">
+              </fieldset>
+
+              <fieldset class="form-group">
+                <label for="lbltelefono"> Telefono / Movil </label>
+                <input type="text" name="telefono" class="form-control"  value="{{old('telefono')}}"> </input>
+              </fieldset>           
+
             <fieldset class="form-group">
-                <label class="form-label" for="lblrazonsocial"> Razon Social </label>
-                <input type="text" name="razonsocial" class="form-control" value="{{old('razonsocial')}}" require> </input>
+              <label for="lblintereses">Direccion </label>
+              <textarea rows="5"  name="direccion"  class="form-control"  value="{{old('direccion')}}" ></textarea>
+            
+            </fieldset>      
+
+            <h5 class="m-t-lg with-border">Informacion del contacto</h5>
+
+            <fieldset class="form-group">
+              <label class="form-label" for="lblnombrecontacto"> Nombre </label>
+              <input type="text" name="nombrecontacto" class="form-control" value="{{old('nombrecontacto')}}" require> 
             </fieldset>
 
-            <fieldset class="form-group">
-							<label class="form-label" for="lblidentificacion">Número RUC</label>             
-              <input type="text" name="identificacion" class="form-control" value="{{old('identificacion')}}" require> </input>
-            </fieldset>  
-
-            <fieldset class="form-group">
-							<label class="form-label" for="lblcorreo">Correo electrónico </label>
-							<input type="correo" class="form-control" name="correo" placeholder="correo electrónico" value="{{old('correo')}}">
-						</fieldset>
-
-            <fieldset class="form-group">
-              <label for="lbltelefono"> Telefono / Movil </label>
-              <input type="text" name="telefono" class="form-control"  value="{{old('telefono')}}"> </input>
-            </fieldset>           
-
-          <fieldset class="form-group">
-            <label for="lblintereses">Direccion </label>
-            <textarea rows="5"  name="direccion"  class="form-control"  value="{{old('direccion')}}" ></textarea>
-          
-          </fieldset>      
-
-          <h5 class="m-t-lg with-border">Informacion del contacto</h5>
-
-          <fieldset class="form-group">
-            <label class="form-label" for="lblnombrecontacto"> Nombre </label>
-            <input type="text" name="nombrecontacto" class="form-control" value="{{old('nombrecontacto')}}" require> 
-          </fieldset>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <fieldset class="form-group">
-              <label class="form-label" for="lblcorreocontacto">Correo electrónico </label>
-              <input type="correo" class="form-control" name="correocontacto" placeholder="correo electrónico" value="{{old('correocontacto')}}">
-            </fieldset>
-          </div> 
-          <div class="col-lg-6">
-            <fieldset class="form-group">
-              <label for="lbltelefonocontacto"> Telefono / Movil </label>
-              <input type="text" name="telefonocontacto" class="form-control"  value="{{old('telefonocontacto')}}"> 
-            </fieldset>           
+          <div class="row">
+            <div class="col-lg-6">
+              <fieldset class="form-group">
+                <label class="form-label" for="lblcorreocontacto">Correo electrónico </label>
+                <input type="correo" class="form-control" name="correocontacto" placeholder="correo electrónico" value="{{old('correocontacto')}}">
+              </fieldset>
+            </div> 
+            <div class="col-lg-6">
+              <fieldset class="form-group">
+                <label for="lbltelefonocontacto"> Telefono / Movil </label>
+                <input type="text" name="telefonocontacto" class="form-control"  value="{{old('telefonocontacto')}}"> 
+              </fieldset>           
+            </div>
           </div>
-        </div>
-            <button type="submit" class="btn btn-sm btn-success" > Guardar proveedor</button>
-            <br>
-            <br>
+              <button type="submit" class="btn btn-sm btn-success" > Guardar proveedor</button>
+              <br>
+              <br>
         </form>
       </div>   
     </div>      
 </div>
 </div>
 </div>
+
+
 @endsection
 
 @section('scripts')

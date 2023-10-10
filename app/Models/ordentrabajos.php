@@ -5,14 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ordentrabajo extends Model
+class ordentrabajos extends Model
 {
     use HasFactory;
-
-    public function Ordentrabajo(){
-        return $this->belongsTo(ordentrabajo::class);
-    }
-
+  
     public function Empresa(){
         return $this->belongsTo(Empresa::class);
     }
@@ -21,4 +17,9 @@ class ordentrabajo extends Model
         return $this->belongsTo(Cliente::class);
     }
 
+    public function Estado(){
+        return $this->belongsTo(ValorCatalogo::class);
+    }
+
+    
 }

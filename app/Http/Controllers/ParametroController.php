@@ -35,6 +35,10 @@ class ParametroController extends Controller
         $parametro->porcentajeimpuesto=$request->porcentajeimpuesto; 
         $parametro->porcentajeutilidadcontado=$request->porcentajeutilidadcontado; 
         $parametro->porcentajeutilidadcredito=$request->porcentajeutilidadcredito;     
+        $parametro->porcentajeinsumos=$request->porcentajeinsumos; 
+        $parametro->porcentajehorasextras=$request->porcentajehorasextras; 
+        $parametro->porcentajemanoexterna=$request->porcentajemanoexterna; 
+
         $parametro->save();
         $notification='El parametro ha sido creada correctamente.';
         return redirect('/parametros')->with(compact('notification'));
@@ -63,7 +67,10 @@ class ParametroController extends Controller
         $parametro->empresa_id=1;//$request->empresa_id; 
         $parametro->porcentajeimpuesto=$request->porcentajeimpuesto; 
         $parametro->porcentajeutilidadcontado=$request->porcentajeutilidadcontado; 
-        $parametro->porcentajeutilidadcredito=$request->porcentajeutilidadcredito;     
+        $parametro->porcentajeutilidadcredito=$request->porcentajeutilidadcredito;   
+        $parametro->porcentajeinsumos=$request->porcentajeinsumos; 
+        $parametro->porcentajehorasextras=$request->porcentajehorasextras; 
+        $parametro->porcentajemanoexterna=$request->porcentajemanoexterna;  
         $parametro->save();
         $notification='El parametro ha sido actualizada correctamente.';      
         return redirect('/home')->with(compact('notification'));
